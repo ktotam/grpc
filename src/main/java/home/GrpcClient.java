@@ -25,7 +25,7 @@ public class GrpcClient {
 
     public static void main(String[] args) {
         user = "user";
-        String target = "localhost:50053";
+        String target = "localhost:50052";
 
         if (args.length > 0) {
             user = args[0];

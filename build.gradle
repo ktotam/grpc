@@ -71,9 +71,25 @@ task grpcClient(type: CreateStartScripts) {
     classpath = startScripts.classpath
 }
 
+task grpcChatClient(type: CreateStartScripts) {
+    mainClassName = 'home.ChatClient'
+    applicationName = 'grpc-chat-client'
+    outputDir = new File(project.buildDir, 'tmp')
+    classpath = startScripts.classpath
+}
+
+task grpcChatServer(type: CreateStartScripts) {
+    mainClassName = 'home.ChatServer'
+    applicationName = 'grpc-chat-server'
+    outputDir = new File(project.buildDir, 'tmp')
+    classpath = startScripts.classpath
+}
+
 applicationDistribution.into('bin') {
     from(grpcServer)
     from(grpcClient)
+    from(grpcChatServer)
+    from(grpcChatClient)
     fileMode = 0755
 }
 

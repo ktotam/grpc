@@ -16,7 +16,7 @@ public class GrpcServer {
     private static final Logger logger = Logger.getLogger(GrpcServer.class.getName());
 
     private void start() throws IOException, InterruptedException {
-        int port = 50053;
+        int port = 50052;
         Server server = ServerBuilder.forPort(port)
                 .addService(new MsgService())
                 .build()
